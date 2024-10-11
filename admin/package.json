@@ -4,8 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-   "build": "npm install --unsafe-perm && npx vite build",
-  "start": "vite"
+  "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  
   },
   "dependencies": {
     "axios": "^1.7.7",
