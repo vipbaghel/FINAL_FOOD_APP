@@ -1,38 +1,98 @@
-.sidebar{
-    width:18%;
-    min-height:100vh;
-    border:1.5px solid #a9a9a9;
-    border-top:0;
-    font-size:max(1vw,10px);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
+
+.sidebar {
+  min-height: 100vh;
+  width: 220px;
+  background: linear-gradient(120deg, #ffe0b2 0%, #ffecd2 50%, #fcb69f 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease-in-out infinite;
+  box-shadow: 2px 0 24px #ffb34744;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  font-family: 'Roboto', 'Montserrat', sans-serif;
 }
 
-.sidebar-options{
-    padding-top:50px;
-    padding-left:20%;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
-.sidebar-option{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    border:1px solid #a9a9a9;
-    border-right:0;
-    padding:8px 10px;
-    border-radius:3px 0px 0px 3px;
-    cursor:pointer;
-
+.sidebar-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.sidebar-option.active{
-    background-color:#fff0ed;
-    border-color:tomato;
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  color: #d35400;
+  font-size: 1.08rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #ffe0b2;
+  cursor: pointer;
 }
 
-@media (max-width:900px){
-    .sidebar-option p{
-        display:none;
-    }
+.sidebar-option img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  background: #fffbe6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #ffe0b2;
+  transition: transform 0.2s;
+}
+
+.sidebar-option:hover,
+.sidebar-option.active {
+  background: linear-gradient(90deg, #ffecd2 0%, #ffe0b2 100%);
+  color: #ff8c00;
+  box-shadow: 0 4px 16px #ffb34744;
+  transform: scale(1.04);
+}
+
+.sidebar-option:hover img,
+.sidebar-option.active img {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.sidebar-option p {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 100vw;
+    min-height: unset;
+    flex-direction: row;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 2px 24px #ffb34744;
+  }
+  .sidebar-options {
+    flex-direction: row;
+    gap: 0.7rem;
+    margin-top: 0;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar-option {
+    padding: 0.7rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
 }

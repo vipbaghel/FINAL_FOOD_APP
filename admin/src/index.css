@@ -1,31 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-*{
-  padding:0;
-  margin:0;
-  box-sizing:border-box;
-  font-family:Outfit;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-
-body{
-  min-height:100vh;
-  background-color:#fcfcfc;
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ffe0b2 0%, #ffecd2 50%, #fcb69f 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 12s ease-in-out infinite;
 }
 
-
-a{
-  text-decoration:none;
-  color:inherit;
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
-hr{
-  border:none;
-  height:1px;
-  background-color:#a9a9a9;
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
 }
 
+a:hover {
+  color: #ff8c00;
+}
 
-.app-content{
-  display:flex;
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ffe0b2;
+  margin: 1.2rem 0;
+}
+
+.app-content {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #ffecd2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff8c00;
+  border-radius: 8px;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }

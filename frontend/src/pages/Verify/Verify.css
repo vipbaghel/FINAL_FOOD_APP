@@ -1,22 +1,47 @@
-.verify{
-    min-height:60vh;
-    display:grid;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+.verify {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #ffe0b2 0%, #ffecd2 50%, #fcb69f 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease-in-out infinite;
+  font-family: 'Montserrat', sans-serif;
 }
 
-
-.verify .spinner{
-    width:100px;
-    height:100px;
-    place-self:center;
-    border:5px solid #bdbdbd;
-    border-top-color:tomato;
-    border-radius:50%;
-    animation:rotate 1s infinite;
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
-@keyframes rotate {
-    100%{
-        transform:rotate(360deg);
-    }
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #ffe0b2;
+  border-top: 8px solid #ff8c00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  box-shadow: 0 4px 24px #ffb34744;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* Optional: Add a loading text below the spinner */
+.verify::after {
+  content: "Verifying your payment...";
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #ff8c00;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #ffe0b2;
 }

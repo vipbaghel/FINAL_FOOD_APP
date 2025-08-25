@@ -1,25 +1,67 @@
- .app-download{
-    margin:auto auto;
-    margin-top:100px;
-    font-size:max(3vw,20px);
-    text-align:center;
-    font-weight:500;
- }
+.app-download {
+  background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(255,140,0,0.10);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: 'Poppins', sans-serif;
+}
 
- .app-download-platforms{
-    display:flex;
-    justify-content:center;
-    gap:max(2vw,10px);
-    margin-top:40px;
- }
+.app-download p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #d35400;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
 
- .app-download-platforms img{
-    width:max(30vw,120px);
-    max-width:180px;
-    transition:0.5s;
-    cursor:pointer;
- }
+.app-download-highlight {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #ff8c00;
+  background: linear-gradient(90deg, #ff8c00 0%, #ffb347 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
- .app-download-platforms img:hover{
-    transform:scale(1.05);
- }
+.app-download-platforms {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.platform-btn {
+  display: inline-block;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(255,140,0,0.12);
+  padding: 0.7rem 1.2rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.platform-btn:hover {
+  background: #fff7e6;
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(255,140,0,0.18);
+}
+
+.platform-btn img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .app-download {
+    padding: 1.5rem 0.5rem;
+    max-width: 95vw;
+  }
+  .platform-btn img {
+    width: 90px;
+  }
+  .app-download-platforms {
+    gap: 1rem;
+  }
+}

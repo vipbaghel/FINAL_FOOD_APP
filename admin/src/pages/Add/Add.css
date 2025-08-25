@@ -1,54 +1,163 @@
-.add{
-    width:70%;
-    margin-left:max(5vw,25px);
-    margin-top:50px;
-    color:#6d6d6d;
-    font-size:16px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
+
+.add {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  font-family: 'Roboto', 'Montserrat', sans-serif;
+  background: linear-gradient(120deg, #ffe0b2 0%, #ffecd2 50%, #fcb69f 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.add-content{
-    display:flex;
-
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
-.flex-col{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+.add form.flex-col {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #ffb34744;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 340px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.5s;
 }
 
-.add form{
-    gap:20px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
 }
 
-.add-img-upload img{
-    width:120px;
-
+.add-img-upload.flex-col {
+  align-items: center;
+  gap: 0.7rem;
 }
 
-.add-product-name, .add-product-description{
-    width:max(40%,280px);
+.add-img-upload p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff8c00;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.add-product-name input, .add-product-description textarea{
-    padding:10px;
+.add-img-upload label {
+  cursor: pointer;
+  display: block;
 }
 
-.add-category-price{
-    display:flex;
-    gap:30px;
+.add-img-upload img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #ffe0b2;
+  background: #fffbe6;
+  border: 2px dashed #ffb347;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.add-category-price select,.add-category-price input{
-    max-width:120px;
-    padding:10px;
+.add-img-upload img:hover {
+  border-color: #ff8c00;
+  box-shadow: 0 4px 16px #ff8c0044;
 }
 
-.add-btn{
-    max-width:120px;
-    border:none;
-    padding:10px;
-    background-color:black;
-    color:white;
-    cursor:pointer;
+.add-product-name.flex-col,
+.add-product-description.flex-col,
+.add-price.flex-col {
+  gap: 0.5rem;
+}
+
+.add-product-name p,
+.add-product-description p,
+.add-category p,
+.add-price p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #d35400;
+  margin-bottom: 0.2rem;
+}
+
+.add-product-name input,
+.add-price input,
+.add-category select,
+.add-product-description textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid #ffb347;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 2px 8px #ffe0b2;
+}
+
+.add-product-name input:focus,
+.add-price input:focus,
+.add-category select:focus,
+.add-product-description textarea:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 4px 16px #ff8c0044;
+}
+
+.add-product-description textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+
+.add-category-price {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.add-category select {
+  font-weight: 600;
+  color: #ff8c00;
+  background: #fffbe6;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #ff8c00 0%, #facc15 100%);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(255,140,0,0.12);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #facc15 0%, #ff8c00 100%);
+  transform: scale(1.04);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .add form.flex-col {
+    min-width: unset;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .add-category-price {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
 }
