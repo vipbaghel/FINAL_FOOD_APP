@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
 
-  const url='http://localhost:4000'
+  const url='https://final-food-app-zeta.vercel.app'
   return (
     <div>
       <ToastContainer />
